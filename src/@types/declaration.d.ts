@@ -1,14 +1,17 @@
-declare module '*.css';
-
+/*
+ * @Date: 2020-04-14 17:12:43
+ * @LastEditors: Hans
+ * @description: 
+ * @LastEditTime: 2020-04-14 18:14:18
+ * @FilePath: /okr/src/types/index.d.ts
+ */
 declare module '*.less';
 
 declare module '*.scss';
 
-declare module '*.sass';
-
 declare module '*.svg';
 
-declare module '*.png';
+declare module "*.png";
 
 declare module '*.jpg';
 

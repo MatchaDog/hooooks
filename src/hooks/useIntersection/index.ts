@@ -2,8 +2,8 @@
  * @Date: 2020-06-03 17:26:21
  * @LastEditors: Hans
  * @description:
- * @LastEditTime: 2020-06-03 17:53:24
- * @FilePath: /okr/src/hooks/useIntersection/index.ts
+ * @LastEditTime: 2020-06-05 17:07:45
+ * @FilePath: /hooks/src/hooks/useIntersection/index.ts
  */
 
 import { MutableRefObject, useRef, useEffect } from "react";
@@ -20,7 +20,9 @@ const useIntersection = <T extends HTMLElement>(
         });
     });
     useEffect(() => {
-        observer.observe(observedRef.current);
+        observedRef &&
+            observedRef.current &&
+            observer.observe(observedRef.current);
         return () => {
             observer && observer.disconnect();
         };

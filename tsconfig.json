@@ -1,20 +1,23 @@
 {
     "compilerOptions": {
-        "allowSyntheticDefaultImports": true,
-        "jsx": "react",
-        "lib": ["es6", "dom"],
-        "module": "ESNext",
+        "target": "esnext",
+        "module": "esnext",
         "moduleResolution": "node",
-        "noImplicitAny": true,
+        "importHelpers": true,
+        "jsx": "react",
+        "esModuleInterop": true,
         "sourceMap": true,
-        "strict": true,
-        "strictNullChecks": false, //允许null为其他类型子集
-        "target": "ESNext",
         "baseUrl": ".",
+        "strict": true,
+        "allowSyntheticDefaultImports": true,
+        "skipLibCheck": true,
+        "declaration": true,
+        "emitDeclarationOnly": true,
         "paths": {
             "@/*": ["src/*"]
         },
-        "typeRoots": ["node_modules/@types", "src/@types"]
+        "rootDir": "src",
+        "typeRoots": ["node_modules/@types"]
     },
-    "exclude": ["node_modules"]
+    "exclude": ["node_modules", "lib", "es", "build"]
 }

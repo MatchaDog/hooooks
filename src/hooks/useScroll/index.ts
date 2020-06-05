@@ -2,8 +2,8 @@
  * @Date: 2020-05-27 15:57:57
  * @LastEditors: Hans
  * @description:
- * @LastEditTime: 2020-05-27 17:24:41
- * @FilePath: /IT_PC__APP/src/hooks/useScroll/index.ts
+ * @LastEditTime: 2020-06-05 17:08:24
+ * @FilePath: /hooks/src/hooks/useScroll/index.ts
  */
 import { useRef, MutableRefObject } from "react";
 import BScroll from "@better-scroll/core";
@@ -24,7 +24,9 @@ const useScroll = <T extends HTMLElement>(params: {
     }
     const scrollWrapRef = useRef<T>();
     const handleInit = () => {
-        return new BScroll(scrollWrapRef.current, params);
+        return (
+            scrollWrapRef.current && new BScroll(scrollWrapRef.current, params)
+        );
     };
     return {
         scrollWrapRef: scrollWrapRef as MutableRefObject<T>,

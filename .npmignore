@@ -1,7 +1,6 @@
-/config
-/public
 /src
 
 .prettierrc
 .eslintrc
-.tsconfig.json
+tsconfig.json
+webpack.config.js

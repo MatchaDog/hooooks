@@ -6,18 +6,19 @@
         "importHelpers": true,
         "jsx": "react",
         "esModuleInterop": true,
-        "sourceMap": true,
         "baseUrl": ".",
+        "outDir": "build",
+        "declarationDir": "build",
         "strict": true,
-        "allowSyntheticDefaultImports": true,
-        "skipLibCheck": true,
-        "declaration": true,
-        "emitDeclarationOnly": true,
         "paths": {
             "@/*": ["src/*"]
         },
-        "rootDir": "src",
-        "typeRoots": ["node_modules/@types"]
+        "removeComments": true,
+        "allowSyntheticDefaultImports": true,
+        "skipLibCheck": true,
+        "declaration": true,
+        "lib": ["es5", "DOM"]
     },
+    "include": ["src/hooks/*/index.ts", "src/hooks/index.ts"],
     "exclude": ["node_modules", "lib", "es", "build"]
 }

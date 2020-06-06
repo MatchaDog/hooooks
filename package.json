@@ -1,28 +1,28 @@
 {
     "name": "hooooks",
-    "private": true,
-    "version": "1.0.2",
-    "main": "./index.js",
+    "version": "1.0.3",
+    "main": "./build/index.js",
+    "types": "./build/index.d.ts",
     "author": "Hans",
     "license": "ISC",
     "scripts": {
-        "build:dec": "tsc --declarationDir lib && tsc --declarationDir es",
+        "build:dec": "tsc",
         "build": "webpack --progress --colors --config ./webpack.config.js",
-        "build:umd": "webpack-cli",
-        "pub": "npm publish"
+        "pub": "npm run build:dec && npm publish"
     },
     "dependencies": {
+        "intersection-observer": "^0.10.0",
         "react": "^16.12.0"
     },
     "devDependencies": {
-        "lerna": "^3.22.0",
         "@types/react": "^16.9.16",
         "eslint-plugin-react-hooks": "^3.0.0",
+        "lerna": "^3.22.0",
         "source-map-loader": "^0.2.4",
         "ts-import-plugin": "^1.6.2",
         "ts-loader": "^6.2.1",
         "ts-node-dev": "^1.0.0-pre.43",
-        "typescript": "^3.7.3",
+        "typescript": "^3.9.5",
         "webpack": "^4.43.0",
         "webpack-cli": "^3.3.9",
         "webpack-merge": "^4.2.2"

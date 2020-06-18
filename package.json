@@ -1,16 +1,17 @@
 {
     "name": "hooooks",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "main": "./build/index.js",
     "types": "./build/index.d.ts",
     "author": "Hans",
     "license": "ISC",
     "scripts": {
-        "build:dec": "tsc",
+        "build:tsc": "tsc",
         "build": "webpack --progress --colors --config ./webpack.config.js",
-        "pub": "npm run build:dec && npm publish"
+        "pub": "npm run build:tsc && npm publish"
     },
     "dependencies": {
+        "@juggle/resize-observer": "^3.2.0",
         "intersection-observer": "^0.10.0",
         "react": "^16.12.0"
     },

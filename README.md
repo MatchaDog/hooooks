@@ -1,3 +1,10 @@
+<!--
+ * @Date: 2020-04-10 13:51:08
+ * @LastEditors: Hans
+ * @description: 
+ * @LastEditTime: 2020-06-18 16:57:46
+ * @FilePath: /hooks/README.md
+--> 
 
 ## hooooks
 
@@ -71,4 +78,18 @@ const [obState, divRef] = useIntersection()
 
 <div ref={divRef}></div>
 { obState && <div>此时被曝光</div> }
+```
+
+##### useResize
+
+useResize 返回一个尺寸「width:number, height:number」和指定Ref，你需要把 Ref 绑定在你需要的 Dom 元素上，指定的Dom尺寸变化时，将返回给你最新的尺寸
+
+```javascript
+const [size, divRef] = useResize()
+
+<div ref={divRef}></div>
+{ 
+    <div>width: {size.width}</div>
+    <div>height: {size.height}</div>
+}
 ```

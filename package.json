@@ -1,6 +1,6 @@
 {
     "name": "hooooks",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "main": "./build/index.js",
     "types": "./build/index.d.ts",
     "author": "Hans",
@@ -12,8 +12,11 @@
     },
     "dependencies": {
         "@juggle/resize-observer": "^3.2.0",
+        "@types/react-dom": "^16.9.8",
+        "docz": "^2.3.1",
         "intersection-observer": "^0.10.0",
-        "react": "^16.12.0"
+        "react": "^16.12.0",
+        "react-dom": "^16.13.1"
     },
     "devDependencies": {
         "@types/react": "^16.9.16",

@@ -2,7 +2,7 @@
  * @Date: 2020-06-18 16:44:16
  * @LastEditors: Hans
  * @description:
- * @LastEditTime: 2020-06-18 17:15:32
+ * @LastEditTime: 2020-06-21 20:49:14
  * @FilePath: /hooks/src/hooks/useResize/index.ts
  */
 
@@ -34,13 +34,13 @@ const useResize = <T extends HTMLElement>(
         }
     });
     useEffect(() => {
-        observedRef && observedRef.current
-            ? observer.observe(observedRef.current)
-            : observer.observe(ele);
+        observedRef &&
+            observedRef.current &&
+            observer.observe(ele || observedRef.current);
         return () => {
             observer && observer.disconnect();
         };
-    }, [observedRef]);
+    }, [observedRef, ele]);
 
     return [size, observedRef as MutableRefObject<T>];
 };

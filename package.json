@@ -1,6 +1,6 @@
 {
     "name": "hooooks",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "main": "./build/index.js",
     "types": "./build/index.d.ts",
     "author": "Hans",
@@ -8,7 +8,9 @@
     "scripts": {
         "build:tsc": "tsc",
         "build": "webpack --progress --colors --config ./webpack.config.js",
-        "pub": "npm run build:tsc && npm publish"
+        "pub": "npm run build:tsc && npm publish",
+        "doc": "docz dev",
+        "doc:build": "docz build"
     },
     "dependencies": {
         "@juggle/resize-observer": "^3.2.0",

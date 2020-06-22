@@ -2,7 +2,7 @@
  * @Date: 2020-06-21 20:23:48
  * @LastEditors: Hans
  * @description:
- * @LastEditTime: 2020-06-21 20:54:09
+ * @LastEditTime: 2020-06-22 10:05:39
  * @FilePath: /hooks/src/hooks/useMutation/index.ts
  */
 import { MutableRefObject, useRef, useEffect, useState } from "react";

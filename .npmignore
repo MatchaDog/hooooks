@@ -1,5 +1,8 @@
 /src
+/docs
+/dist
 
+.umirc.ts
 .prettierrc
 .eslintrc
 tsconfig.json

@@ -21,9 +21,10 @@
     "devDependencies": {
         "@types/react": "^16.9.16",
         "@types/react-dom": "^16.9.8",
-        "dumi": "^1.0.31",
         "antd": "^4.3.5",
+        "dumi": "^1.0.31",
         "eslint-plugin-react-hooks": "^3.0.0",
+        "hooooks": "^1.0.10",
         "ts-import-plugin": "^1.6.2",
         "ts-loader": "^6.2.1",
         "typescript": "^3.9.5",

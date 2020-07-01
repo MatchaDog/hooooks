@@ -2,22 +2,23 @@
  * @Date: 2020-06-18 16:44:16
  * @LastEditors: Hans
  * @description:
- * @LastEditTime: 2020-06-22 16:50:53
+ * @LastEditTime: 2020-07-01 20:25:33
  * @FilePath: /hooks/src/hooks/useResize/index.ts
  */
 
 import { MutableRefObject, useRef, useLayoutEffect, useState } from "react";
 import { ResizeObserver } from "@juggle/resize-observer";
 import { ResizeObserverEntry } from "@juggle/resize-observer";
+import { getTargetObject, targetObjectType } from "../utils";
 
 const useResize = <T extends HTMLElement>(
-    ele: HTMLElement,
+    ele?: targetObjectType<T>,
 ): [
     {
         width: number;
         height: number;
     },
-    MutableRefObject<T>,
+    MutableRefObject<T> | null,
 ] => {
     const observedRef = useRef<T>();
     const [size, setSize] = useState({
@@ -25,7 +26,8 @@ const useResize = <T extends HTMLElement>(
         height: 0,
     });
     useLayoutEffect(() => {
-        if (!observedRef.current) {
+        const target = getTargetObject(observedRef.current ? observedRef : ele);
+        if (!target) {
             return () => {};
         }
         const observer = new ResizeObserver(
@@ -39,15 +41,13 @@ const useResize = <T extends HTMLElement>(
                 }
             },
         );
-        observedRef &&
-            observedRef.current &&
-            observer.observe(ele || observedRef.current);
+        observer.observe(target);
         return () => {
             observer && observer.disconnect();
         };
     }, [observedRef, ele]);
 
-    return [size, observedRef as MutableRefObject<T>];
+    return [size, (observedRef as MutableRefObject<T>) || undefined];
 };
 
 export default useResize;

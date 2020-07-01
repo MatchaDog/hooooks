@@ -1,5 +1,6 @@
 /src
 /docs
+/hooooks_doc
 /dist
 
 .umirc.ts

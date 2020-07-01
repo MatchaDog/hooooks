@@ -2,32 +2,35 @@
  * @Date: 2020-06-21 20:23:48
  * @LastEditors: Hans
  * @description:
- * @LastEditTime: 2020-06-22 16:43:11
+ * @LastEditTime: 2020-07-01 20:32:48
  * @FilePath: /hooks/src/hooks/useMutation/index.ts
  */
-import { MutableRefObject, useRef, useState, useLayoutEffect } from "react";
+import { MutableRefObject, useRef, useLayoutEffect } from "react";
+import { getTargetObject, targetObjectType } from "../utils";
 
 const useMutation = <T extends HTMLElement>(
+    onObserved: (changes: MutationRecord) => void,
+    ele?: targetObjectType<T>,
     options?: MutationObserverInit | undefined,
-): [MutationRecord | undefined, MutableRefObject<T>] => {
+): MutableRefObject<T> => {
     const observedRef = useRef<T>();
-    const [changeState, setChangeState] = useState<MutationRecord | undefined>();
     useLayoutEffect(() => {
-        if (!observedRef.current) {
+        const target = getTargetObject(observedRef.current ? observedRef : ele);
+        if (!target) {
             return () => {};
         }
         const observer = new MutationObserver((changes: MutationRecord[]) => {
             changes.forEach((change) => {
-                setChangeState(change);
+                onObserved(change);
             });
         });
-        observedRef && observedRef.current && observer.observe(observedRef.current as HTMLElement, options);
+        observer.observe(target, options);
         return () => {
             observer && observer.disconnect();
         };
-    }, [observedRef]);
+    }, [observedRef, ele]);
 
-    return [changeState, observedRef as MutableRefObject<T>];
+    return (observedRef as MutableRefObject<T>) || undefined;
 };
 
 export default useMutation;

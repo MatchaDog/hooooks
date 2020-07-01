@@ -1,6 +1,6 @@
 {
     "name": "hooooks",
-    "version": "1.0.10",
+    "version": "1.0.11",
     "main": "./build/index.js",
     "types": "./build/index.d.ts",
     "author": "Hans",
@@ -8,9 +8,7 @@
     "scripts": {
         "build:tsc": "tsc",
         "build": "webpack --progress --colors --config ./webpack.config.js",
-        "pub": "npm run build:tsc && npm publish",
-        "doc": "npx dumi dev",
-        "doc:build": "npx dumi build"
+        "pub": "npm run build:tsc && npm publish"
     },
     "dependencies": {
         "@juggle/resize-observer": "^3.2.0",
@@ -21,10 +19,7 @@
     "devDependencies": {
         "@types/react": "^16.9.16",
         "@types/react-dom": "^16.9.8",
-        "antd": "^4.3.5",
-        "dumi": "^1.0.31",
         "eslint-plugin-react-hooks": "^3.0.0",
-        "hooooks": "^1.0.10",
         "ts-import-plugin": "^1.6.2",
         "ts-loader": "^6.2.1",
         "typescript": "^3.9.5",

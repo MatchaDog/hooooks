@@ -2,7 +2,7 @@
  * @Date: 2020-05-27 16:16:10
  * @LastEditors: Hans
  * @description:
- * @LastEditTime: 2020-06-21 21:04:17
+ * @LastEditTime: 2020-07-06 17:53:46
  * @FilePath: /hooks/src/hooks/index.ts
  */
 
@@ -13,6 +13,7 @@ import useClickOutside from "./useClickOutside";
 import useIntersection from "./useIntersection";
 import useResize from "./useResize";
 import useMutation from "./useMutation";
+import useUpdate from "./useUpdate";
 
 export {
     useDidMount,
@@ -22,4 +23,5 @@ export {
     useIntersection,
     useResize,
     useMutation,
+    useUpdate,
 };

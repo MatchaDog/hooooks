@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "esnext",
+        "moduleResolution": "node",
+        "importHelpers": true,
+        "jsx": "react",
+        "esModuleInterop": true,
+        "baseUrl": ".",
+        "outDir": "build",
+        "declarationDir": "build",
+        "strict": true,
+        "paths": {
+            "@/*": ["src/*"]
+        },
+        "removeComments": true,
+        "allowSyntheticDefaultImports": true,
+        "skipLibCheck": true,
+        "declaration": true,
+        "lib": ["es5", "DOM"]
+    },
+    "include": ["src/hooks/*/index.ts", "src/hooks/index.ts"],
+    "exclude": ["node_modules", "lib", "es", "build"]
+}

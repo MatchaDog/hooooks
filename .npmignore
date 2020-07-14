@@ -1,0 +1,17 @@
+/src
+/docs
+/hooooks_doc
+/dist
+
+.umirc.ts
+.prettierrc
+.eslintrc
+tsconfig.json
+webpack.config.js
+package.json
+
+yarn.lock
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

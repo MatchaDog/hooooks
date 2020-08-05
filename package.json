@@ -6,6 +6,7 @@
     "author": "Hans",
     "license": "ISC",
     "scripts": {
+        "build:gulp": "gulp",
         "build:tsc": "tsc",
         "build": "webpack --progress --colors --config ./webpack.config.js",
         "pub": "npm run build:tsc && npm publish"
@@ -17,9 +18,10 @@
         "react-dom": "^16.13.1"
     },
     "devDependencies": {
-        "@types/react": "^16.9.16",
-        "@types/react-dom": "^16.9.8",
         "eslint-plugin-react-hooks": "^3.0.0",
+        "gulp": "^4.0.2",
+        "gulp-cli": "^2.3.0",
+        "gulp-typescript": "^6.0.0-alpha.1",
         "ts-import-plugin": "^1.6.2",
         "ts-loader": "^6.2.1",
         "typescript": "^3.9.5",

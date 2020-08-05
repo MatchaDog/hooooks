@@ -1,12 +1,12 @@
-import { MutableRefObject } from "react";
-
 /*
  * @Date: 2020-06-30 13:55:18
  * @LastEditors: Hans
  * @description:
- * @LastEditTime: 2020-07-01 17:42:56
- * @FilePath: /hooks/src/hooks/utils/index.ts
+ * @LastEditTime: 2020-08-05 13:01:31
+ * @FilePath: /hooooks/src/hooks/utils/index.ts
  */
+import { MutableRefObject } from "react";
+
 type targetObjectType<T> = T | (() => T) | MutableRefObject<T> | undefined;
 
 const getTargetObject = <T extends HTMLElement>(

@@ -6,7 +6,11 @@
 .pnp.js
 .idea/
 .vscode/
+
+# production
 /build
+/es
+/module
 
 # testing
 /coverage

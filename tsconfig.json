@@ -1,23 +1,22 @@
 {
     "compilerOptions": {
-        "target": "esnext",
-        "module": "esnext",
+        "baseUrl": ".",
+        "outDir": "build",
+        "declarationDir": "build",
+        "target": "ES2019",
+        "lib": ["es6", "dom"],
+        "module": "commonjs",
         "moduleResolution": "node",
         "importHelpers": true,
         "jsx": "react",
         "esModuleInterop": true,
-        "baseUrl": ".",
-        "outDir": "build",
-        "declarationDir": "build",
         "strict": true,
-        "paths": {
-            "@/*": ["src/*"]
-        },
         "removeComments": true,
         "allowSyntheticDefaultImports": true,
-        "skipLibCheck": true,
         "declaration": true,
-        "lib": ["es5", "DOM"]
+        "paths": {
+            "@/*": ["src/*"]
+        }
     },
     "include": ["src/hooks/*/index.ts", "src/hooks/index.ts"],
     "exclude": ["node_modules", "lib", "es", "build"]

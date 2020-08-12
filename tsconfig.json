@@ -2,7 +2,6 @@
     "compilerOptions": {
         "baseUrl": ".",
         "outDir": "build",
-        "declarationDir": "build",
         "target": "ES2019",
         "lib": ["es6", "dom"],
         "module": "commonjs",
@@ -13,7 +12,7 @@
         "strict": true,
         "removeComments": true,
         "allowSyntheticDefaultImports": true,
-        "declaration": true,
+        "declaration": false,
         "paths": {
             "@/*": ["src/*"]
         }

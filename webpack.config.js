@@ -2,8 +2,8 @@
  * @Date: 2020-06-05 16:46:15
  * @LastEditors: Hans
  * @description:
- * @LastEditTime: 2020-06-05 19:11:49
- * @FilePath: /hooks/webpack.config.js
+ * @LastEditTime: 2020-08-12 15:30:51
+ * @FilePath: /hooooks/webpack.config.js
  */
 
 const path = require("path");
@@ -18,7 +18,7 @@ module.exports = {
         globalObject: "this",
         filename: "hooooks.js",
         library: "hooooks",
-        path: path.resolve(__dirname, "./build"),
+        path: path.resolve(__dirname, "./dist"),
     },
     resolve: {
         extensions: [".tsx", ".ts", ".js", ".json"],
@@ -38,57 +38,25 @@ module.exports = {
     },
     module: {
         rules: [
-            // {
-            //     test: /\.(jsx|tsx|js|ts)$/,
-            //     loader: "ts-loader",
-            //     options: {
-            //         transpileOnly: true,
-            //         getCustomTransformers: () => ({
-            //             before: [
-            //                 tsImportPluginFactory({
-            //                     libraryName: "hooooks",
-            //                     libraryDirectory: "src",
-            //                     style: true, // to less
-            //                 }),
-            //             ],
-            //         }),
-            //         compilerOptions: {
-            //             module: "es2015",
-            //         },
-            //     },
-            //     exclude: /node_modules/,
-            // },
             {
-                test: /\.tsx?$/,
-                exclude: /(node_modules|bower_components)/,
-                use: {
-                    loader: "babel-loader",
-                    options: {
-                        presets: [
-                            "@babel/typescript",
-                            [
-                                "@babel/env",
-                                {
-                                    loose: true,
-                                    modules: false,
-                                },
-                            ],
-                            "@babel/react",
+                test: /\.(jsx|tsx|js|ts)$/,
+                loader: "ts-loader",
+                options: {
+                    transpileOnly: true,
+                    getCustomTransformers: () => ({
+                        before: [
+                            tsImportPluginFactory({
+                                libraryName: "hooooks",
+                                libraryDirectory: "src",
+                                style: true, // to less
+                            }),
                         ],
-                        plugins: [
-                            "babel-plugin-transform-async-to-promises",
-                            [
-                                "@babel/plugin-proposal-decorators",
-                                { legacy: true },
-                            ],
-                            [
-                                "@babel/plugin-proposal-class-properties",
-                                { loose: true },
-                            ],
-                            "@babel/proposal-object-rest-spread",
-                        ],
+                    }),
+                    compilerOptions: {
+                        module: "es2015",
                     },
                 },
+                exclude: /node_modules/,
             },
         ],
     },

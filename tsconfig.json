@@ -1,7 +1,6 @@
 {
     "compilerOptions": {
         "baseUrl": ".",
-        "outDir": "build",
         "target": "ES2019",
         "lib": ["es6", "dom"],
         "module": "commonjs",
@@ -17,6 +16,5 @@
             "@/*": ["src/*"]
         }
     },
-    "include": ["src/hooks/*/index.ts", "src/hooks/index.ts"],
-    "exclude": ["node_modules", "lib", "es", "build"]
+    "exclude": ["node_modules", "lib", "es"]
 }

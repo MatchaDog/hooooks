@@ -1,7 +1,6 @@
 /src
 /docs
 /hooooks_doc
-/dist
 
 .commitlintrc
 .huskyrc

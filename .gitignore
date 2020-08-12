@@ -8,9 +8,10 @@
 .vscode/
 
 # production
-/build
+/dist
 /es
-/module
+/@types
+/lib
 
 # testing
 /coverage

@@ -12,6 +12,7 @@
 /es
 /@types
 /lib
+/hooooks_doc
 
 # testing
 /coverage

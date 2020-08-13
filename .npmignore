@@ -2,6 +2,7 @@
 /docs
 /hooooks_doc
 
+.babelrc
 .commitlintrc
 .huskyrc
 .lintstagedrc

@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-const useIsFirstMount: () => boolean = () => {
+const useIsFirstMount = (): boolean => {
     const isFirstMount = useRef(true);
     if (isFirstMount.current) {
         isFirstMount.current = false;

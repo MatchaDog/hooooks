@@ -2,12 +2,12 @@
  * @Date: 2020-05-27 15:52:03
  * @LastEditors: Hans
  * @description:
- * @LastEditTime: 2020-07-01 20:25:22
- * @FilePath: /hooks/src/hooks/useClickOutside/index.ts
+ * @LastEditTime: 2020-08-12 19:44:05
+ * @FilePath: /hooooks/src/hooks/useClickOutside/index.ts
  */
 
 import { MutableRefObject, useRef, useLayoutEffect } from "react";
-import { getTargetObject,targetObjectType } from "../utils";
+import { getTargetObject, targetObjectType } from "../utils";
 
 const useClickOutside = <T extends HTMLElement>(
     onClickOutSide: (e: MouseEvent) => void,

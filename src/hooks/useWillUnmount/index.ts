@@ -2,19 +2,20 @@
  * @Date: 2020-05-27 15:54:43
  * @LastEditors: Hans
  * @description:
- * @LastEditTime: 2020-06-24 11:29:34
- * @FilePath: /hooks/src/hooks/useWillUnmount/index.ts
+ * @LastEditTime: 2020-08-12 16:13:49
+ * @FilePath: /hooooks/src/hooks/useWillUnmount/index.ts
  */
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
-const useWillUnmount = (fn: () => void) => {
+const useWillUnMount: (fn: () => void) => void = (fn) => {
+    const cb = useRef(fn);
     useEffect(
         () => () => {
-            return fn && fn();
+            return cb.current && cb.current();
         },
         [],
     );
 };
 
-export default useWillUnmount;
+export default useWillUnMount;

@@ -2,20 +2,19 @@
  * @Date: 2020-05-27 15:53:57
  * @LastEditors: Hans
  * @description:
- * @LastEditTime: 2020-06-24 18:55:06
- * @FilePath: /hooks/src/hooks/useDidUpdate/index.ts
+ * @LastEditTime: 2020-08-12 16:59:58
+ * @FilePath: /hooooks/src/hooks/useDidUpdate/index.ts
  */
 
 import { useRef, useEffect } from "react";
+import useIsFirstMount from "../useIsFirstMount";
 
-const useDidUpdate = (fn: () => void, conditions?: any[] | undefined) => {
-    const didMountRef = useRef(false);
+const useDidUpdate: (fn: () => void, conditions?: any[] | undefined) => void = (fn, conditions) => {
+    const isFirstMount = useIsFirstMount();
     useEffect(() => {
-        if (!didMountRef.current) {
-            didMountRef.current = true;
-            return;
+        if (!isFirstMount) {
+            return fn && fn();
         }
-        return fn && fn();
     }, conditions);
 };
 

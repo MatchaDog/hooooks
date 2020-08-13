@@ -2,8 +2,8 @@
  * @Date: 2020-06-18 16:44:16
  * @LastEditors: Hans
  * @description:
- * @LastEditTime: 2020-07-01 20:25:33
- * @FilePath: /hooks/src/hooks/useResize/index.ts
+ * @LastEditTime: 2020-08-12 19:18:59
+ * @FilePath: /hooooks/src/hooks/useResize/index.ts
  */
 
 import { MutableRefObject, useRef, useLayoutEffect, useState } from "react";
@@ -28,19 +28,17 @@ const useResize = <T extends HTMLElement>(
     useLayoutEffect(() => {
         const target = getTargetObject(observedRef.current ? observedRef : ele);
         if (!target) {
-            return () => {};
+            return () => null;
         }
-        const observer = new ResizeObserver(
-            (entries: ResizeObserverEntry[]) => {
-                for (let entry of entries) {
-                    const { width, height } = entry.contentRect;
-                    setSize({
-                        width,
-                        height,
-                    });
-                }
-            },
-        );
+        const observer = new ResizeObserver((entries: ResizeObserverEntry[]) => {
+            for (const entry of entries) {
+                const { width, height } = entry.contentRect;
+                setSize({
+                    width,
+                    height,
+                });
+            }
+        });
         observer.observe(target);
         return () => {
             observer && observer.disconnect();

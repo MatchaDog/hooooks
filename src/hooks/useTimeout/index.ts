@@ -2,7 +2,7 @@
  * @Date: 2020-08-18 15:11:06
  * @LastEditors: Hans
  * @description:
- * @LastEditTime: 2020-08-19 11:02:49
+ * @LastEditTime: 2020-08-19 11:16:11
  * @FilePath: /hooooks/src/hooks/useTimeout/index.ts
  */
 import { useRef, useCallback, useState } from "react";
@@ -13,7 +13,7 @@ import useDidMount from "../useDidMount";
 const useTimeout = (
     cb: () => void,
     time = 0,
-    opts: { immediate: boolean },
+    opts?: { immediate: boolean },
 ): [boolean | null, () => void, () => void] => {
     const cbRef = useRef(cb);
     const timerRef = useRef<ReturnType<typeof setTimeout>>();

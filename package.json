@@ -1,6 +1,6 @@
 {
     "name": "hooooks",
-    "version": "1.0.16",
+    "version": "1.0.17",
     "author": "Hans",
     "license": "ISC",
     "main": "./lib/index.js",

@@ -1,4 +1,5 @@
-lib/
-es/
-dist/
-hooooks_doc/
+/lib/
+/es/
+/dist/
+/hooooks_doc/
+/src/**/test

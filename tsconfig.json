@@ -12,9 +12,10 @@
         "removeComments": true,
         "allowSyntheticDefaultImports": true,
         "declaration": false,
+        "skipLibCheck": true,
         "paths": {
             "@/*": ["src/*"]
         }
     },
-    "exclude": ["node_modules", "lib", "es"]
+    "exclude": ["node_modules", "lib", "es", "dist", "hooooks_doc", "**/test"]
 }

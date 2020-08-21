@@ -2,11 +2,11 @@
  * @Date: 2020-05-27 15:52:03
  * @LastEditors: Hans
  * @description:
- * @LastEditTime: 2020-08-12 19:44:05
+ * @LastEditTime: 2020-08-21 18:07:50
  * @FilePath: /hooooks/src/hooks/useClickOutside/index.ts
  */
 
-import { MutableRefObject, useRef, useLayoutEffect } from "react";
+import { MutableRefObject, useRef, useLayoutEffect, useCallback } from "react";
 import { getTargetObject, targetObjectType } from "../utils";
 
 const useClickOutside = <T extends HTMLElement>(
@@ -14,20 +14,23 @@ const useClickOutside = <T extends HTMLElement>(
     ele?: targetObjectType<T>,
 ): MutableRefObject<T> => {
     const clickRef = useRef<T>();
-    useLayoutEffect(() => {
-        const target = getTargetObject(clickRef.current ? clickRef : ele);
-        if (!target) return () => {};
-        const handleClickOutside = (e: MouseEvent) => {
+    const handleClickOutside = useCallback(
+        (e: MouseEvent) => {
+            const target = getTargetObject(clickRef.current ? clickRef : ele);
+            if (!target) return () => {};
             const targetElement = e.target as Element;
             if (!target.contains(targetElement)) {
                 onClickOutSide(e);
             }
-        };
-        document.addEventListener("mousedown", handleClickOutside);
+        },
+        [ele, onClickOutSide],
+    );
+    useLayoutEffect(() => {
+        document.addEventListener("click", handleClickOutside);
         return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
+            document.removeEventListener("click", handleClickOutside);
         };
-    }, [clickRef, ele]);
+    }, [clickRef, ele, handleClickOutside]);
     return (clickRef as MutableRefObject<T>) || undefined;
 };
 

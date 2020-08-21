@@ -2,7 +2,7 @@
  * @Date: 2020-08-18 15:11:06
  * @LastEditors: Hans
  * @description:
- * @LastEditTime: 2020-08-19 11:17:21
+ * @LastEditTime: 2020-08-20 11:26:46
  * @FilePath: /hooooks/src/hooks/useInterval/index.ts
  */
 import { useRef, useCallback, useState } from "react";
@@ -23,11 +23,11 @@ const useInterval = (
         if (!time || time === 0) {
             return undefined;
         }
+        setState(false);
         timerRef.current && clearTimeout(timerRef.current);
-        setState(true);
         timerRef.current = setInterval(() => {
+            setState(true);
             cbRef.current?.();
-            setState(false);
         }, time);
     }, [time]);
 

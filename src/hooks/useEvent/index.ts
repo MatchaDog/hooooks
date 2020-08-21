@@ -2,7 +2,7 @@
  * @Date: 2020-08-12 19:53:45
  * @LastEditors: Hans
  * @description:
- * @LastEditTime: 2020-08-13 11:54:37
+ * @LastEditTime: 2020-08-20 10:38:46
  * @FilePath: /hooooks/src/hooks/useEvent/index.ts
  */
 import { MutableRefObject, useRef, useLayoutEffect } from "react";

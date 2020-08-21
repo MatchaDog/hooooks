@@ -2,7 +2,7 @@
  * @Date: 2020-08-18 15:11:06
  * @LastEditors: Hans
  * @description:
- * @LastEditTime: 2020-08-19 11:16:11
+ * @LastEditTime: 2020-08-20 11:25:32
  * @FilePath: /hooooks/src/hooks/useTimeout/index.ts
  */
 import { useRef, useCallback, useState } from "react";
@@ -20,11 +20,11 @@ const useTimeout = (
     const [state, setState] = useState<boolean | null>(false);
 
     const set = useCallback(() => {
+        setState(false);
         timerRef.current && clearTimeout(timerRef.current);
-        setState(true);
         timerRef.current = setTimeout(() => {
+            setState(true);
             cbRef.current?.();
-            setState(false);
         }, time);
     }, [time]);
 

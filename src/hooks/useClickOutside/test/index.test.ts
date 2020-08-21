@@ -2,15 +2,15 @@
  * @Date: 2020-08-21 14:46:00
  * @LastEditors: Hans
  * @description:
- * @LastEditTime: 2020-08-21 18:47:42
- * @FilePath: /hooooks/src/hooks/useClickOutside/test/index.test.tsx
+ * @LastEditTime: 2020-08-21 19:14:58
+ * @FilePath: /hooooks/src/hooks/useClickOutside/test/index.test.ts
  */
 import { renderHook } from "@testing-library/react-hooks";
 
 import useClickOutside from "..";
 
 describe("useClickOutside", () => {
-    it("should be defined", async () => {
+    it("test: useClickOutside should be defined", async () => {
         expect(useClickOutside).toBeDefined();
     });
 
@@ -24,7 +24,7 @@ describe("useClickOutside", () => {
         document.body.removeChild(testDom);
     });
 
-    it("test on dom selector", async () => {
+    it("test: useClickOutside listens dom selector", async () => {
         let count = 0;
         const { rerender, unmount } = renderHook((dom: () => HTMLDivElement) =>
             useClickOutside<HTMLDivElement>(() => {

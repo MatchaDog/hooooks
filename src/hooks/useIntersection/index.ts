@@ -2,8 +2,8 @@
  * @Date: 2020-06-03 17:26:21
  * @LastEditors: Hans
  * @description:
- * @LastEditTime: 2020-07-01 20:25:58
- * @FilePath: /hooks/src/hooks/useIntersection/index.ts
+ * @LastEditTime: 2020-08-24 10:39:27
+ * @FilePath: /hooooks/src/hooks/useIntersection/index.ts
  */
 
 import { MutableRefObject, useRef, useLayoutEffect, useState } from "react";
@@ -11,6 +11,7 @@ import "intersection-observer";
 import { getTargetObject, targetObjectType } from "../utils";
 
 const useIntersection = <T extends HTMLElement>(
+    intersectionOpts?: IntersectionObserverInit | undefined,
     ele?: targetObjectType<T>,
 ): [boolean, MutableRefObject<T>] => {
     const observedRef = useRef<T>();
@@ -21,17 +22,15 @@ const useIntersection = <T extends HTMLElement>(
         if (!target) {
             return () => {};
         }
-        const observer = new IntersectionObserver(
-            (changes: IntersectionObserverEntry[]) => {
-                changes.forEach((change) => {
-                    if (change.intersectionRatio > 0) {
-                        setChangeState(true);
-                    } else {
-                        setChangeState(false);
-                    }
-                });
-            },
-        );
+        const observer = new IntersectionObserver((changes: IntersectionObserverEntry[]) => {
+            changes.forEach((change) => {
+                if (change.intersectionRatio > 0) {
+                    setChangeState(true);
+                } else {
+                    setChangeState(false);
+                }
+            });
+        }, intersectionOpts);
         observer.observe(target);
         return () => {
             observer && observer.disconnect();

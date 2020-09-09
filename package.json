@@ -1,6 +1,6 @@
 {
     "name": "hooooks",
-    "version": "1.0.19",
+    "version": "1.0.20",
     "description": "React Hooks from demand and reuse",
     "author": "Hans",
     "license": "ISC",
@@ -16,7 +16,7 @@
     ],
     "homepage": "https://github.com/MatchaDog/hooooks",
     "bugs": {
-        "email": "hd17621750725@gmail.com",
+        "email": "matchahans@163.com",
         "url": "https://github.com/MatchaDog/hooooks/issues"
     },
     "repository": {

@@ -1,12 +1,28 @@
 {
     "name": "hooooks",
     "version": "1.0.19",
+    "description": "React Hooks from demand and reuse",
     "author": "Hans",
     "license": "ISC",
     "main": "./lib/index.js",
     "module": "./es/index.js",
     "types": "./lib/index.d.ts",
     "unpkg": "./dist/hooooks.js",
+    "keywords": [
+        "react",
+        "hooks",
+        "react-hooks",
+        "hooks-library"
+    ],
+    "homepage": "https://github.com/MatchaDog/hooooks",
+    "bugs": {
+        "email": "hd17621750725@gmail.com",
+        "url": "https://github.com/MatchaDog/hooooks/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/MatchaDog/hooooks.git"
+    },
     "scripts": {
         "test": "jest",
         "build:gulp": "gulp",

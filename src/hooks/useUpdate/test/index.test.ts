@@ -2,7 +2,7 @@
  * @Date: 2020-09-10 10:35:49
  * @LastEditors: Hans
  * @description:
- * @LastEditTime: 2020-09-10 16:17:23
+ * @LastEditTime: 2020-09-10 16:37:20
  * @FilePath: /hooooks/src/hooks/useUpdate/test/index.test.ts
  */
 import { renderHook, act } from "@testing-library/react-hooks";
@@ -23,10 +23,10 @@ describe("useUpdate", () => {
         act(() => {
             result.current();
         });
-        expect(count).toEqual(1);
+        expect(count).toEqual(2);
         act(() => {
             result.current();
         });
-        expect(count).toEqual(2);
+        expect(count).toEqual(3);
     });
 });

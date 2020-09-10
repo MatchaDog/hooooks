@@ -2,7 +2,7 @@
  * @Date: 2020-06-03 17:26:21
  * @LastEditors: Hans
  * @description:
- * @LastEditTime: 2020-08-24 10:39:27
+ * @LastEditTime: 2020-09-10 16:22:48
  * @FilePath: /hooooks/src/hooks/useIntersection/index.ts
  */
 
@@ -35,7 +35,7 @@ const useIntersection = <T extends HTMLElement>(
         return () => {
             observer && observer.disconnect();
         };
-    }, [observedRef, ele]);
+    }, [observedRef, ele, intersectionOpts]);
 
     return [changeState, (observedRef as MutableRefObject<T>) || undefined];
 };

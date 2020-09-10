@@ -2,7 +2,7 @@
  * @Date: 2020-08-12 19:53:45
  * @LastEditors: Hans
  * @description:
- * @LastEditTime: 2020-08-20 10:38:46
+ * @LastEditTime: 2020-09-10 16:24:59
  * @FilePath: /hooooks/src/hooks/useEvent/index.ts
  */
 import { MutableRefObject, useRef, useLayoutEffect } from "react";
@@ -24,7 +24,7 @@ const useEvent = <T extends HTMLElement, K extends keyof HTMLElementEventMap>(
         return () => {
             target.removeEventListener(name, cb, opts);
         };
-    }, [ele, eventRef]);
+    }, [ele, eventRef, opts, cb, name]);
     return (eventRef as MutableRefObject<T>) || undefined;
 };
 

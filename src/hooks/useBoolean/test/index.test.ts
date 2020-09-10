@@ -1,25 +1,32 @@
+/*
+ * @Date: 2020-09-09 17:13:29
+ * @LastEditors: Hans
+ * @description:
+ * @LastEditTime: 2020-09-10 10:38:44
+ * @FilePath: /hooooks/src/hooks/useBoolean/test/index.test.ts
+ */
 import { renderHook, act } from "@testing-library/react-hooks";
 
-import useBool from "..";
+import useBoolean from "..";
 
-const setUp = (initialValue?: boolean) => renderHook(() => useBool(initialValue));
+const setUp = (initialValue?: boolean) => renderHook(() => useBoolean(initialValue));
 
-describe("useBool", () => {
-    it("test: useBool should be defined", async () => {
-        expect(useBool).toBeDefined();
+describe("useBoolean", () => {
+    it("test: useBoolean should be defined", async () => {
+        expect(useBoolean).toBeDefined();
     });
 
-    it("test: useBool has a default value", async () => {
+    it("test: useBoolean has a default value", async () => {
         const { result } = setUp();
         expect(result.current[0]).toBeFalsy();
     });
 
-    it("test: useBool could set a default value as true", async () => {
+    it("test: useBoolean could set a default value as true", async () => {
         const { result } = setUp(true);
         expect(result.current[0]).toBeTruthy();
     });
 
-    it("test: useBool could toggle state", async () => {
+    it("test: useBoolean could toggle state", async () => {
         const { result } = setUp();
         expect(result.current[0]).toBeFalsy();
         const setToggle = result.current[1];
@@ -28,9 +35,17 @@ describe("useBool", () => {
             setToggle();
         });
         expect(result.current[0]).toBeTruthy();
+        act(() => {
+            setToggle(false);
+        });
+        expect(result.current[0]).toBeFalsy();
+        act(() => {
+            setToggle(true);
+        });
+        expect(result.current[0]).toBeTruthy();
     });
 
-    it("test: useBool could set true value", async () => {
+    it("test: useBoolean could set true value", async () => {
         const { result } = setUp();
         expect(result.current[0]).toBeFalsy();
         const setTrue = result.current[2];
@@ -41,7 +56,7 @@ describe("useBool", () => {
         expect(result.current[0]).toBeTruthy();
     });
 
-    it("test: useBool could set false value", async () => {
+    it("test: useBoolean could set false value", async () => {
         const { result } = setUp(true);
         expect(result.current[0]).toBeTruthy();
         const setFalse = result.current[3];

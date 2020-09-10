@@ -21,7 +21,7 @@ import useUpdate from "./useUpdate";
 import useTimeout from "./useTimeout";
 import useInterval from "./useInterval";
 
-import useBool from "./useBool";
+import useBool from "./useBoolean";
 
 export {
     useDidMount,

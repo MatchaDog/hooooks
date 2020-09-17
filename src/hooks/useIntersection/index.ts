@@ -2,7 +2,7 @@
  * @Date: 2020-06-03 17:26:21
  * @LastEditors: Hans
  * @description:
- * @LastEditTime: 2020-09-10 16:22:48
+ * @LastEditTime: 2020-09-17 19:24:34
  * @FilePath: /hooooks/src/hooks/useIntersection/index.ts
  */
 
@@ -13,31 +13,26 @@ import { getTargetObject, targetObjectType } from "../utils";
 const useIntersection = <T extends HTMLElement>(
     intersectionOpts?: IntersectionObserverInit | undefined,
     ele?: targetObjectType<T>,
-): [boolean, MutableRefObject<T>] => {
+): [IntersectionObserverEntry | null, MutableRefObject<T>] => {
     const observedRef = useRef<T>();
-    const [changeState, setChangeState] = useState(false);
+    const [entries, setEntries] = useState<IntersectionObserverEntry | null>(null);
 
     useLayoutEffect(() => {
         const target = getTargetObject(observedRef.current ? observedRef : ele);
         if (!target) {
             return () => {};
         }
-        const observer = new IntersectionObserver((changes: IntersectionObserverEntry[]) => {
-            changes.forEach((change) => {
-                if (change.intersectionRatio > 0) {
-                    setChangeState(true);
-                } else {
-                    setChangeState(false);
-                }
-            });
+        const observer = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
+            setEntries(entries[0]);
         }, intersectionOpts);
         observer.observe(target);
         return () => {
+            setEntries(null);
             observer && observer.disconnect();
         };
     }, [observedRef, ele, intersectionOpts]);
 
-    return [changeState, (observedRef as MutableRefObject<T>) || undefined];
+    return [entries, (observedRef as MutableRefObject<T>) || undefined];
 };
 
 export default useIntersection;

@@ -33,5 +33,4 @@ All notable changes to this project will be documented in this file. See [standa
 * delete hooooks_doc ([507b474](https://github.com/MatchaDog/hooooks/commit/507b47441b92efd73ddf6265e654fe37081a554c))
 * opt useEvent and useIsFirst and util return type ([cd65467](https://github.com/MatchaDog/hooooks/commit/cd65467d2b67fc44bc2fabd99d36d26a91ab7c4d))
 * update pkg version ([82fd1cb](https://github.com/MatchaDog/hooooks/commit/82fd1cb0edc0bbf7ce48076be5ea353e290a6539))
-* useTimeout and useInterval isReady status ([28d3484](https://github.com/MatchaDog/hooooks/commit/28d348445a6676fef9469fac02e1296c22026993))
-* useTimeout and useInterval opts optional, fix useInterval bug when time = 0 ([36b6e1d](https://github.com/MatchaDog/hooooks/commit/36b6e1d7e82551c6d180fc1aca908ce3e5c7b12a))
+* useTimeout and useInterval isReady status ([28d3484](https://github.com/MatchaDog/hooooks/commit/28d348445a6676fef9469fac02e1296c22026993)) useTimeout and useInterval opts optional, fix useInterval bug when time = 0 ([36b6e1d](https://github.com/MatchaDog/hooooks/commit/36b6e1d7e82551c6d180fc1aca908ce3e5c7b12a))

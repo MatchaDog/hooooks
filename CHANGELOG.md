@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/MatchaDog/hooooks/compare/v1.1.0...v1.2.0) (2020-10-20)
+
+
+### Features
+
+* add useMap, useSet, and useCookie ([67e70bd](https://github.com/MatchaDog/hooooks/commit/67e70bd1c0fbfbbd2bf9c586bfd18f1a5eac03f1))
+* update changelog ([2b21655](https://github.com/MatchaDog/hooooks/commit/2b2165527ed3047f0f0d6de2e5f6d015638af077))
+
+
+### Bug Fixes
+
+* wrong dependence ([2d812b0](https://github.com/MatchaDog/hooooks/commit/2d812b05c4eb1dc43b92cd44c0a4ac18ed33aa0a))
+
 ## 1.1.0 (2020-10-09)
 
 

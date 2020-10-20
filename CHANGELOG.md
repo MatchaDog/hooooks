@@ -4,9 +4,6 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [1.1.2](https://github.com/MatchaDog/hooooks/compare/v1.2.0...v1.1.2) (2020-10-20)
 
-## [1.2.0](https://github.com/MatchaDog/hooooks/compare/v1.1.0...v1.2.0) (2020-10-20)
-
-
 ### Features
 
 * add useMap, useSet, and useCookie ([67e70bd](https://github.com/MatchaDog/hooooks/commit/67e70bd1c0fbfbbd2bf9c586bfd18f1a5eac03f1))

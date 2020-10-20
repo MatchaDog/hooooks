@@ -2,7 +2,7 @@
  * @Date: 2020-08-18 15:11:06
  * @LastEditors: Hans
  * @description:
- * @LastEditTime: 2020-08-20 11:26:46
+ * @LastEditTime: 2020-10-19 17:38:13
  * @FilePath: /hooooks/src/hooks/useInterval/index.ts
  */
 import { useRef, useCallback, useState } from "react";
@@ -10,11 +10,12 @@ import useDidUpdate from "../useDidUpdate";
 import useWillUnMount from "../useWillUnMount";
 import useDidMount from "../useDidMount";
 
-const useInterval = (
-    cb: () => void,
-    time = 0,
-    opts?: { immediate: boolean },
-): [boolean | null, () => void, () => void] => {
+type actionType = {
+    set?: () => void;
+    clear?: () => void;
+};
+
+const useInterval = (cb: () => void, time = 0, opts?: { immediate: boolean }): [boolean | null, actionType] => {
     const cbRef = useRef(cb);
     const timerRef = useRef<ReturnType<typeof setInterval>>();
     const [state, setState] = useState<boolean | null>(false);
@@ -48,7 +49,7 @@ const useInterval = (
 
     useWillUnMount(clear);
 
-    return [state, set, clear];
+    return [state, { set, clear }];
 };
 
 export default useInterval;

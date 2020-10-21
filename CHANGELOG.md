@@ -9,6 +9,18 @@ All notable changes to this project will be documented in this file. See [standa
 
 * opt changelog and pkg ([e3327dd](https://github.com/MatchaDog/hooooks/commit/e3327ddd02067c28ba79e48359a618c93221ff52))
 
+
+### Bug Fixes
+
+* replace optional actionType to necessary ([954a30f](https://github.com/MatchaDog/hooooks/commit/954a30f1b17d04b5404674fb530c9ff17caac35c))
+
+## [1.2.0](https://github.com/MatchaDog/hooooks/compare/v1.1.2...v1.2.0) (2020-10-21)
+
+
+### Features
+
+* opt changelog and pkg ([e3327dd](https://github.com/MatchaDog/hooooks/commit/e3327ddd02067c28ba79e48359a618c93221ff52))
+
 ### [1.1.2](https://github.com/MatchaDog/hooooks/compare/v1.2.0...v1.1.2) (2020-10-20)
 
 ### Features

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/MatchaDog/hooooks/compare/v1.1.2...v1.2.0) (2020-10-21)
+
+
+### Features
+
+* opt changelog and pkg ([e3327dd](https://github.com/MatchaDog/hooooks/commit/e3327ddd02067c28ba79e48359a618c93221ff52))
+
 ### [1.1.2](https://github.com/MatchaDog/hooooks/compare/v1.2.0...v1.1.2) (2020-10-20)
 
 ### Features

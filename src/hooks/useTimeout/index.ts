@@ -11,8 +11,8 @@ import useWillUnMount from "../useWillUnMount";
 import useDidMount from "../useDidMount";
 
 type actionType = {
-    set?: () => void;
-    clear?: () => void;
+    set: () => void;
+    clear: () => void;
 };
 
 const useTimeout = (cb: () => void, time = 0, opts?: { immediate: boolean }): [boolean | null, actionType] => {

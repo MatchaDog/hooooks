@@ -8,27 +8,21 @@
 import { useState } from "react";
 
 type actionType = {
-    setToggle?: (flag?: boolean) => void;
-    setTrue?: () => void;
-    setFalse?: () => void;
+    toggle: (flag?: boolean) => void;
+    setTrue: () => void;
+    setFalse: () => void;
 };
 
 const useBoolean = (defaultValue?: boolean): [boolean, actionType] => {
     const [boolState, setBoolState] = useState(defaultValue || false);
 
-    const setToggle = (flag?: boolean) => {
-        setBoolState(typeof flag === "boolean" ? flag : !boolState);
-    };
+    const toggle = (flag?: boolean) => setBoolState(typeof flag === "boolean" ? flag : !boolState);
 
-    const setTrue = () => {
-        setBoolState(true);
-    };
+    const setTrue = () => setBoolState(true);
 
-    const setFalse = () => {
-        setBoolState(false);
-    };
+    const setFalse = () => setBoolState(false);
 
-    return [boolState, { setToggle, setTrue, setFalse }];
+    return [boolState, { toggle, setTrue, setFalse }];
 };
 
 export default useBoolean;

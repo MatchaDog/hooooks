@@ -29,18 +29,18 @@ describe("useBoolean", () => {
     it("test: useBoolean could toggle state", async () => {
         const { result } = setUp();
         expect(result.current[0]).toBeFalsy();
-        const setToggle = result.current[1];
-        expect(typeof setToggle).toBe("function");
+        const toggle = result.current[1].toggle;
+        expect(typeof toggle).toBe("function");
         act(() => {
-            setToggle();
+            toggle();
         });
         expect(result.current[0]).toBeTruthy();
         act(() => {
-            setToggle(false);
+            toggle(false);
         });
         expect(result.current[0]).toBeFalsy();
         act(() => {
-            setToggle(true);
+            toggle(true);
         });
         expect(result.current[0]).toBeTruthy();
     });
@@ -48,7 +48,7 @@ describe("useBoolean", () => {
     it("test: useBoolean could set true value", async () => {
         const { result } = setUp();
         expect(result.current[0]).toBeFalsy();
-        const setTrue = result.current[2];
+        const setTrue = result.current[1].setTrue;
         expect(typeof setTrue).toBe("function");
         act(() => {
             setTrue();
@@ -59,7 +59,7 @@ describe("useBoolean", () => {
     it("test: useBoolean could set false value", async () => {
         const { result } = setUp(true);
         expect(result.current[0]).toBeTruthy();
-        const setFalse = result.current[3];
+        const setFalse = result.current[1].setFalse;
         expect(typeof setFalse).toBe("function");
         act(() => {
             setFalse();

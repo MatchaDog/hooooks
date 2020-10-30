@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/MatchaDog/hooooks/compare/v1.3.0...v1.2.0) (2020-10-30)
+
+
+### Features
+
+* **useclipboard usemountedstate:** add useClipboard and useMountedState ([5fed45b](https://github.com/MatchaDog/hooooks/commit/5fed45b305c6f07587f56d7579e41a846d3edd3e))
+* update ([3af214c](https://github.com/MatchaDog/hooooks/commit/3af214c83521121ba6a9d37fcc8884cb4e1c50b4))
+
 ## [1.1.4](https://github.com/MatchaDog/hooooks/compare/v1.1.2...v1.3.0) (2020-10-21)
 
 

@@ -1,16 +1,9 @@
-/*
- * @Date: 2020-05-27 16:16:10
- * @LastEditors: Hans
- * @description:
- * @LastEditTime: 2020-10-20 17:17:55
- * @FilePath: /hooooks/src/hooks/index.ts
- */
-
 // lifecycle
 import useDidMount from "./useDidMount";
 import useDidUpdate from "./useDidUpdate";
 import useWillUnMount from "./useWillUnMount";
 import useIsFirstMount from "./useIsFirstMount";
+import useMountedState from "./useMountedState";
 
 // document
 import useClickOutside from "./useClickOutside";
@@ -19,6 +12,9 @@ import useInViewport from "./useInViewport";
 import useResize from "./useResize";
 import useMutation from "./useMutation";
 import useEvent from "./useEvent";
+
+// browser
+import useClipboard from "./useClipboard";
 
 // side effect
 import useUpdate from "./useUpdate";
@@ -35,14 +31,16 @@ export {
     useDidMount,
     useDidUpdate,
     useWillUnMount,
+    useIsFirstMount,
+    useMountedState,
     useClickOutside,
     useIntersection,
     useInViewport,
     useResize,
     useMutation,
     useUpdate,
-    useIsFirstMount,
     useEvent,
+    useClipboard,
     useTimeout,
     useInterval,
     useCookie,

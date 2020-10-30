@@ -8,7 +8,7 @@
     "parserOptions": {
         "sourceType": "module"
     },
-    "plugins": ["react-hooks", "@typescript-eslint"],
+    "plugins": ["react-hooks", "@typescript-eslint", "prettier"],
     "rules": {
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
@@ -17,7 +17,19 @@
         "@typescript-eslint/no-empty-interface": "warn",
         "@typescript-eslint/ban-types": ["warn"],
         "@typescript-eslint/no-explicit-any": ["off"],
-        "@typescript-eslint/no-empty-function": "warn"
+        "@typescript-eslint/no-empty-function": "warn",
+        "prettier/prettier": [
+            "warn",
+            {
+                "trailingComma": "all",
+                "tabWidth": 4,
+                "semi": true,
+                "singleQuote": false,
+                "arrowParens": "always",
+                "jsxBracketSameLine": true,
+                "printWidth": 120
+            }
+        ]
     },
-    "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"]
+    "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier"]
 }

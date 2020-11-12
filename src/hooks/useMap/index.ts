@@ -20,7 +20,7 @@ const useMap = <K, V>(initialValue: [K, V][]): [Map<K, V>, actionTypes<K, V>] =>
             has: (key: K) => map.has(key),
             get: (key: K) => map.get(key),
             set: (key: K, value: V) => setMap(new Map([...Array.from(map), [key, value]])),
-            setAll: (value) => setMap(new Map(value)),
+            setAll: (value: [K, V][]) => setMap(new Map(value)),
             remove: (key: K) => {
                 const flag = map.delete(key);
                 setMap(new Map(Array.from(map)));

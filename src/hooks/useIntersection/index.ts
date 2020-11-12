@@ -7,7 +7,7 @@
  */
 
 import { MutableRefObject, useRef, useLayoutEffect, useState } from "react";
-import "intersection-observer";
+// import "intersection-observer";
 import { getTargetObject, targetObjectType } from "../utils";
 
 const useIntersection = <T extends HTMLElement>(
@@ -19,6 +19,7 @@ const useIntersection = <T extends HTMLElement>(
 
     useLayoutEffect(() => {
         const target = getTargetObject(observedRef.current ? observedRef : ele);
+
         if (!target) {
             return () => {};
         }
@@ -30,7 +31,7 @@ const useIntersection = <T extends HTMLElement>(
             setEntries(null);
             observer && observer.disconnect();
         };
-    }, [observedRef, ele, intersectionOpts]);
+    }, [observedRef, ele, intersectionOpts?.root, intersectionOpts?.rootMargin, intersectionOpts?.threshold]);
 
     return [entries, (observedRef as MutableRefObject<T>) || undefined];
 };

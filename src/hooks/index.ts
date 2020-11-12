@@ -12,6 +12,7 @@ import useInViewport from "./useInViewport";
 import useResize from "./useResize";
 import useMutation from "./useMutation";
 import useEvent from "./useEvent";
+import useHover from "./useHover";
 
 // browser
 import useClipboard from "./useClipboard";
@@ -37,6 +38,7 @@ export {
     useIntersection,
     useInViewport,
     useResize,
+    useHover,
     useMutation,
     useUpdate,
     useEvent,

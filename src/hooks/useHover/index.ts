@@ -19,10 +19,10 @@ const useHover = <T extends HTMLElement>(ele?: targetObjectType<T>): [boolean, M
             return () => {};
         }
         target.addEventListener("mouseenter", enterCallback);
-        target.addEventListener("mousemove", moveCallback);
+        target.addEventListener("mouseleave", moveCallback);
         return () => {
             target.addEventListener("mouseenter", enterCallback);
-            target.addEventListener("mousemove", moveCallback);
+            target.addEventListener("mouseleave", moveCallback);
         };
     }, [ele, hoverRef, enterCallback, moveCallback]);
 
